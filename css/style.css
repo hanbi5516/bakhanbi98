@@ -1,0 +1,60 @@
+*{ margin: 0; padding: 0; }
+li{ list-style: none;}
+a{ color: #222 ; text-decoration: none; display: block; }
+a:hover{
+    color:red;
+} 
+
+/*common*/
+.d-flex { display: flex;}
+.container { width:1200px; margin: 0 auto;} 
+.rel{ position: relative;} 
+.abs{ position: absolute;} 
+.w1200{ width: 1200px;}
+.h100{ height: 100px;} 
+.h200{ height: 200px;} 
+.h300{ height: 300px;} 
+.ofh{ overflow:hidden }
+
+#hd > div{
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    position: relative; /*날개의 기준*/
+}
+#gnb > li > a{
+    font-size: 22px;
+    padding: 0 15px;
+    padding-bottom: 48px;
+    transform: translate3d(0, 33px, 0); /* rel이 abs처럼 움직일 수 잇는 스타일 */
+}
+#gnb > li:hover > a{ color:red}
+#gnb:hover ul{ height: 150px }
+#gnb:after{
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: red;
+    top:100%;
+    left:0;
+    width:1200px;
+    height:0;  
+    transition: height 0.5s;  
+}
+#gnb:hover:after{ height: 150px;}
+#gnb  ul{
+    background-color:red;
+    top:100%;
+    left:0;
+    right:0;
+    line-height: 2.5;
+    text-align: center;
+    height:0;
+    overflow: hidden;
+    transition: height 0.5s;
+    z-index: 10; /*중요*/
+}
+
+#gnb  ul li:hover{
+    background-color: #ccc;
+}
